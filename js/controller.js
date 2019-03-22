@@ -115,7 +115,7 @@ $('#signup-form').submit(function (e) {
             notifyError(res)
         })
         .always(() => {
-            $('#signup-form #button').text("Next")
+            $('#signup-form #button').html("Create my account")
         });
 });
 

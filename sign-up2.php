@@ -32,18 +32,32 @@
                       action="/createProfile2" method="post" enctype="multipart/form-data">
 
                       <div class="m-form__section  l-grid">
-                        <div class="m-form__item m-form__item--text l-grid__item m-form__item--large">
+
+                      <div class="m-form__item m-form__item--select l-grid__item m-form__item--large">
                           <label class="a-field">
-                            <input type="text" name="age" value="" class="a-field__input"
-                              data-behavior="PopulatedInput">
+                            <select name="age" class="a-field__input" data-behavior="PopulatedInput">
+                              <option value=""></option>
+                              <option>Less than 11 years</option>
+                              <option>11 to 17 years</option>
+                              <option>More than 17</option>
+                            </select>
                             <div class="a-field__placeholder">
                               Age
                             </div>
+
+                            <svg class="icon--down-arrow a-field__arrow" role="presentation">
+                              <use xlink:href="#icon--down-arrow"></use>
+                              <title>
+                                down-arrow icon
+                              </title>
+                            </svg>
+
                           </label>
-                          <span class="desc"></span> </div>
+                        </div>
+                        
                         <div class="m-form__item m-form__item--text l-grid__item m-form__item--large">
                           <label class="a-field">
-                            <input type="text" name="location" value="" class="a-field__input"
+                            <input type="text" name="address" value="" class="a-field__input"
                               data-behavior="PopulatedInput">
                             <div class="a-field__placeholder">
                               Location
@@ -54,11 +68,11 @@
                           <label class="a-field">
                             <select name="gender" class="a-field__input" data-behavior="PopulatedInput">
                               <option value=""></option>
-                              <option value="Male">Male</option>
-                              <option value="Female">Female</option>
-                              <option value="Non-binary">Non-binary</option>
-                              <option value="Gender neutral">Gender neutral</option>
-                              <option value="Other">Other</option>
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                              <option value="non-binary">Non-binary</option>
+                              <option value="gender neutral">Gender neutral</option>
+                              <option value="other">Other</option>
                             </select>
                             <div class="a-field__placeholder">
                               Gender
@@ -75,67 +89,10 @@
                         </div>
                         <div class="m-form__item m-form__item--select l-grid__item m-form__item--large">
                           <label class="a-field">
-                            <select name="indication" class="a-field__input" data-behavior="PopulatedInput">
-                              <option value=""></option>
-                              <option value="Breast cancer">Breast cancer</option>
-                              <option value="Prostate cancer">Prostate cancer</option>
-                              <option value="Lung cancer">Lung cancer</option>
-                              <option value="Bladder cancer">Bladder cancer</option>
-                              <option value="Melanoma">Melanoma</option>
-                              <option value="Lymphoma">Lymphoma</option>
-                              <option value="Kidney cancer">Kidney cancer</option>
-                              <option value="Leukemia">Leukemia</option>
-                              <option value="Other">Other</option>
-                            </select>
-                            <div class="a-field__placeholder">
-                              Indication
-                            </div>
-
-                            <svg class="icon--down-arrow a-field__arrow" role="presentation">
-                              <use xlink:href="#icon--down-arrow"></use>
-                              <title>
-                                down-arrow icon
-                              </title>
-                            </svg>
-
-                          </label>
-                        </div>
-                        <div class="m-form__item m-form__item--select l-grid__item m-form__item--large">
-                          <label class="a-field">
-                            <select name="stage" class="a-field__input" data-behavior="PopulatedInput">
-                              <option value=""></option>
-                              <option value="Stage-0">Stage-0</option>
-                              <option value="Stage-I">Stage-I</option>
-                              <option value="Stage-II">Stage-II</option>
-                              <option value="Stage-III">Stage-III</option>
-                              <option value="Stage-IV">Stage-IV</option>
-                            </select>
-                            <div class="a-field__placeholder">
-                              Stage
-                            </div>
-
-                            <svg class="icon--down-arrow a-field__arrow" role="presentation">
-                              <use xlink:href="#icon--down-arrow"></use>
-                              <title>
-                                down-arrow icon
-                              </title>
-                            </svg>
-
-                          </label>
-                        </div>
-                        <div class="m-form__item m-form__item--select l-grid__item m-form__item--large">
-                          <label class="a-field">
                             <select name="profile_type" class="a-field__input" data-behavior="PopulatedInput">
                               <option value=""></option>
-                              <option value="Patient">Patient</option>
-                              <option value="Survivor">Survivor</option>
-                              <option value="Friend">Friend</option>
-                              <option value="Family member">Family member</option>
-                              <option value="Caregiver">Caregiver</option>
-                              <option value="Physician">Physician</option>
-                              <option value="Nurse">Nurse</option>
-                              <option value="Medical staff">Medical staff</option>
-                              <option value="Advocate">Advocate</option>
+                              <option value="">I'm a victim</option>
+                              <option value="">I am reporting for a child</option>
                             </select>
                             <div class="a-field__placeholder">
                               Profile Type

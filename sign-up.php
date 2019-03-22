@@ -24,13 +24,11 @@
                     <h1 class="f-h3 o-contact_form__title">Create my profile</h1>
 
                     <ol class="m-progress_display">
-                      <li class="m-progress_display__item f-h5 is-active">Settings</li>
-                      <li class="m-progress_display__item f-h5">About me</li>
+                      <li class="m-progress_display__item f-h5 is-active">Your details</li>
+                      <li class="m-progress_display__item f-h5">Done!</li>
                     </ol>
 
-                    <form class="m-form o-contact_form__create-form" data-behavior="AjaxForm AjaxFormResponses"
-                      data-ajaxform-url="registration_process" data-ajaxform-formtype="createprofile1"
-                      action="/create_profile2" method="post" enctype="multipart/form-data">
+                    <form class="m-form o-contact_form__create-form" id="signup-form" enctype="multipart/form-data">
 
                       <div class="m-form__section  l-grid">
                         <div class="m-form__item m-form__item--text l-grid__item m-form__item--small">
@@ -60,6 +58,61 @@
                             </div>
                           </label>
                           <span class="desc"></span> </div>
+                        
+                        <div class="m-form__item m-form__item--select l-grid__item m-form__item--large">
+                          <label class="a-field">
+                            <select name="age" class="a-field__input" data-behavior="PopulatedInput">
+                              <option value=""></option>
+                              <option>Less than 11 years</option>
+                              <option>11 to 17 years</option>
+                              <option>More than 17</option>
+                            </select>
+                            <div class="a-field__placeholder">
+                              Age
+                            </div>
+
+                            <svg class="icon--down-arrow a-field__arrow" role="presentation">
+                              <use xlink:href="#icon--down-arrow"></use>
+                              <title>
+                                down-arrow icon
+                              </title>
+                            </svg>
+
+                          </label>
+                        </div>
+
+                        <div class="m-form__item m-form__item--text l-grid__item m-form__item--large">
+                          <label class="a-field">
+                            <input type="text" name="address" value="" class="a-field__input"
+                              data-behavior="PopulatedInput">
+                            <div class="a-field__placeholder">
+                              Location
+                            </div>
+                          </label>
+                          <span class="desc"></span> </div>
+                        <div class="m-form__item m-form__item--select l-grid__item m-form__item--large">
+                          <label class="a-field">
+                            <select name="gender" class="a-field__input" data-behavior="PopulatedInput">
+                              <option value=""></option>
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                              <option value="non-binary">Non-binary</option>
+                              <option value="gender neutral">Gender neutral</option>
+                              <option value="other">Other</option>
+                            </select>
+                            <div class="a-field__placeholder">
+                              Gender
+                            </div>
+
+                            <svg class="icon--down-arrow a-field__arrow" role="presentation">
+                              <use xlink:href="#icon--down-arrow"></use>
+                              <title>
+                                down-arrow icon
+                              </title>
+                            </svg>
+
+                          </label>
+                        </div>
                         <div class="m-form__item m-form__item--text l-grid__item m-form__item--large">
                           <label class="a-field">
                             <input type="password" name="password" value="" class="a-field__input"
@@ -78,6 +131,27 @@
                             </div>
                           </label>
                           <span class="desc"></span> </div>
+
+                        <div class="m-form__item m-form__item--select l-grid__item m-form__item--large">
+                          <label class="a-field">
+                            <select name="profile_type" class="a-field__input" data-behavior="PopulatedInput">
+                              <option value=""></option>
+                              <option value="">I'm a victim</option>
+                              <option value="">I am reporting for a child</option>
+                            </select>
+                            <div class="a-field__placeholder">
+                              Profile Type
+                            </div>
+
+                            <svg class="icon--down-arrow a-field__arrow" role="presentation">
+                              <use xlink:href="#icon--down-arrow"></use>
+                              <title>
+                                down-arrow icon
+                              </title>
+                            </svg>
+
+                          </label>
+                        </div>
                         <div class="m-form__item m-form__item--note l-grid__item m-form__item--large">
                           <div class="a-field a-field--note">
                             <p class="f-p">Tellit will never share your information outside of this platform. As a
@@ -100,24 +174,22 @@
 
                             </div>
                             <div class="f-p untuck a-checkbox__label">
-                              You agree to our <a href="terms.php"
-                                target="_blank">terms of use</a>
+                              You agree to our <a href="terms.php" target="_blank">terms of use</a>
                             </div>
                           </label>
                         </div>
                       </div>
                       <div class="m-form__btn">
                         <button class="a-btn a-btn--type=primary" type="submit">
-
-                          <div class="a-btn__label f-label_caps">
-                            Next
+                          <div class="a-btn__label f-label_caps" id="button">
+                            Create my account
                           </div>
                         </button>
                       </div>
                     </form>
 
-                    <p class="m-form__btn"><a href="login.php"
-                        class="f-p o-contact_form__link">I'm already registered</a></p>
+                    <p class="m-form__btn"><a href="login.php" class="f-p o-contact_form__link">I'm already
+                        registered</a></p>
                   </div>
                 </div>
 
