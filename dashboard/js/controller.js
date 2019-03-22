@@ -78,7 +78,7 @@ $('#login-form').submit(function (e) {
         .done((res) => {
             $.notify('Login Successful!', 'success');
             setTimeout(
-                () => window.location.href = './dashboard/', 1000
+                () => window.location.href = './app/', 1000
             )
         })
         .fail((res) => {

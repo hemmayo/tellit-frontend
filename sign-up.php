@@ -134,10 +134,11 @@
 
                         <div class="m-form__item m-form__item--select l-grid__item m-form__item--large">
                           <label class="a-field">
-                            <select name="profile_type" class="a-field__input" data-behavior="PopulatedInput">
+                            <select name="role" class="a-field__input" data-behavior="PopulatedInput">
                               <option value=""></option>
-                              <option value="">I'm a victim</option>
-                              <option value="">I am reporting for a child</option>
+                              <option value="user">I'm a victim</option>
+                              <option value="user">I am reporting for a child</option>
+                              <option value="ngo">I'm an NGO</option>
                             </select>
                             <div class="a-field__placeholder">
                               Profile Type

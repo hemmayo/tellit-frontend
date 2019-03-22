@@ -33,7 +33,7 @@
                       <div class="m-form__section">
                         <div class="m-form__item">
                           <label class="a-field">
-                            <input type="text" name="email" value="" class="a-field__input"
+                            <input type="text" name="email" class="a-field__input"
                               data-behavior="PopulatedInput" required="">
                             <div class="a-field__placeholder">
                               Email address
@@ -42,7 +42,7 @@
                           <span class="desc"></span> </div>
                         <div class="m-form__item">
                           <label class="a-field">
-                            <input type="password" name="password" value="" class="a-field__input"
+                            <input type="password" name="password" class="a-field__input"
                               data-behavior="PopulatedInput" required="">
                             <div class="a-field__placeholder">
                               Password
