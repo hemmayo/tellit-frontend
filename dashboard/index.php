@@ -157,11 +157,7 @@
                         <div class="l-container uk-margin-top">
                             <ul class="m-horz_list">
                                 <li class="m-horz_list__item">
-                                    <a href="#share-story-overlay" class="a-btn a-btn--with_icon a-btn--type=primary"
-                                        onclick="dataLayer.push({'event': 'write-your-story-started'});"
-                                        data-behavior="OverlayLink AnalyticsClickTracking"
-                                        data-overlaylink-payload="{&quot;url&quot;: &quot;https://ourstory.livehumanly.com/share/overlay?type=text&quot;}"
-                                        data-analyticsclicktracking-label="sys - write entry">
+                                    <a href="create-report.php" class="a-btn a-btn--with_icon a-btn--type=primary">
 
                                         <svg class="icon--pencil a-btn__icon" role="presentation">
                                             <use xlink:href="#icon--pencil"></use>
@@ -174,11 +170,7 @@
                                     </a>
                                 </li>
                                 <li class="m-horz_list__item">
-                                    <a href="#share-story-overlay" class="a-btn a-btn--with_icon a-btn--type=primary"
-                                        onclick="dataLayer.push({'event': 'record-your-story-started'});"
-                                        data-behavior="OverlayLink AnalyticsClickTracking"
-                                        data-overlaylink-payload="{&quot;url&quot;: &quot;https://ourstory.livehumanly.com/share/overlay?type=audio&quot;}"
-                                        data-analyticsclicktracking-label="sys - record entry">
+                                    <a href="#share-story-overlay" class="a-btn a-btn--with_icon a-btn--type=primary">
 
                                         <svg class="icon--microphone a-btn__icon" role="presentation">
                                             <use xlink:href="#icon--microphone"></use>
