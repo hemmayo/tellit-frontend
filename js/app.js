@@ -10781,38 +10781,9 @@
         return ne
     }, document.addEventListener("DOMContentLoaded", function() {
         d.setBreakpointConfig(te), document.addEventListener("analytics:event", function(t) {
-            if ("function" == typeof gtag)
-                try {
-                    gtag("event", t.action || null, {
-                        event_category: t.category || null,
-                        event_label: t.label || null
-                    })
-                } catch (e) {
-                    console.log("analytics:failed\n", "type:event\ntracker:gtag\n", e, t.data)
-                }
-            if ("function" == typeof ga && "function" != typeof gtag)
-                try {
-                    ga("send", "event", t.category || null, t.action || null, t.label || null)
-                } catch (e) {
-                    console.log("analytics:failed\n", "type:event\ntracker:ga\n", e, t.data)
-                }
-            "function" != typeof ga && "function" != typeof gtag && console.log("analytics:send\n", "type:event\n", t.data)
+        // Do nothing here
         }), document.addEventListener("analytics:page", function() {
-            if ("function" == typeof gtag)
-                try {
-                    gtag("config", "UA-128658589-1", {
-                        page_path: location.href
-                    })
-                } catch (t) {
-                    console.log("analytics:failed\n", "type:page\ntracker:gtag\n", t)
-                }
-            if ("function" == typeof ga && "function" != typeof gtag)
-                try {
-                    ga("set", "page", location.href), ga("send", "pageview")
-                } catch (t) {
-                    console.log("analytics:failed\n", "type:page\ntracker:ga\n", t)
-                }
-            "function" != typeof ga && "function" != typeof gtag && console.log("analytics:send\n", "type:page\n", location.href)
+        //    Do nothing
         }), function(t) {
             var e = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "behavior",
                 n = Object.keys(t),
