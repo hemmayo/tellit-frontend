@@ -71,6 +71,9 @@ $('#login-form').submit(function (e) {
             url: "controller.php?login",
             data: data,
             dataType: "json",
+            beforeSend() {
+                $('#login-form #button').text("Please wait...")
+            }
         })
         .done((res) => {
             $.notify('Login Successful!', 'success');
@@ -80,6 +83,9 @@ $('#login-form').submit(function (e) {
         })
         .fail((res) => {
             notifyError(res)
+        })
+        .always(() => {
+            $('#login-form #button').text("Sign In")
         });
 });
 
@@ -95,6 +101,9 @@ $('#signup-form').submit(function (e) {
             url: "controller.php?signup",
             data: data,
             dataType: "json",
+            beforeSend() {
+                $('#signup-form #button').text("Please wait...")
+            }
         })
         .done((res) => {
             $.notify('Account Created', 'success');
@@ -104,6 +113,9 @@ $('#signup-form').submit(function (e) {
         })
         .fail((res) => {
             notifyError(res)
+        })
+        .always(() => {
+            $('#signup-form #button').text("Next")
         });
 });
 

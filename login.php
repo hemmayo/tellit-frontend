@@ -33,10 +33,10 @@
                       <div class="m-form__section">
                         <div class="m-form__item">
                           <label class="a-field">
-                            <input type="text" name="username" value="" class="a-field__input"
+                            <input type="text" name="email" value="" class="a-field__input"
                               data-behavior="PopulatedInput" required="">
                             <div class="a-field__placeholder">
-                              Username (email)
+                              Email address
                             </div>
                           </label>
                           <span class="desc"></span> </div>
@@ -52,11 +52,11 @@
                       </div>
                       <div class="l-grid l-grid--between">
                         <p class="m-form__btn l-grid__item">
-                          <a href="" class="f-label o-contact_form__link">Forgot password? </a>
+                          <a href="forgot-password.php" class="f-label o-contact_form__link">Forgot password? </a>
                         </p>
                         <p class="m-form__btn l-grid__item">
                           <button class="a-btn a-btn--type=primary" type="submit">
-                            <div class="a-btn__label f-label_caps">
+                            <div id="button" class="a-btn__label f-label_caps">
                               Sign In
                             </div>
                           </button>
@@ -82,23 +82,6 @@
         </div>
       </div>
       <?php require 'includes/modals.php'; ?>
-    </div>
-
-    <div class="g-cookie" data-behavior="CookieConsent">
-      <span class="g-cookie__label">
-        This website uses cookies. <a href="/content/terms">Learn more</a>
-      </span>
-
-      <button class="g-cookie__close" data-CookieConsent-closebtn>
-
-        <svg class="icon--close-small" role="img" title="Close" aria-labelledby="icon--close-small-1">
-          <use xlink:href="#icon--close-small"></use>
-          <title id="icon--close-small-1">
-            Close
-          </title>
-        </svg>
-
-      </button>
     </div>
 
   </div>

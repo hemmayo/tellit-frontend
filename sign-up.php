@@ -35,19 +35,19 @@
                       <div class="m-form__section  l-grid">
                         <div class="m-form__item m-form__item--text l-grid__item m-form__item--small">
                           <label class="a-field">
-                            <input type="text" name="first_name" value="" class="a-field__input"
+                            <input type="text" name="name" value="" class="a-field__input"
                               data-behavior="PopulatedInput" required="">
                             <div class="a-field__placeholder">
-                              First name
+                              Your name
                             </div>
                           </label>
                           <span class="desc"></span> </div>
                         <div class="m-form__item m-form__item--text l-grid__item m-form__item--small">
                           <label class="a-field">
-                            <input type="text" name="last_name" value="" class="a-field__input"
+                            <input type="text" name="username" value="" class="a-field__input"
                               data-behavior="PopulatedInput" required="">
                             <div class="a-field__placeholder">
-                              Last name
+                              Username
                             </div>
                           </label>
                           <span class="desc"></span> </div>
@@ -80,7 +80,7 @@
                           <span class="desc"></span> </div>
                         <div class="m-form__item m-form__item--note l-grid__item m-form__item--large">
                           <div class="a-field a-field--note">
-                            <p class="f-p">Humanly will never share your information outside of this platform. As a
+                            <p class="f-p">Tellit will never share your information outside of this platform. As a
                               member, you can always edit your profile information at any time. Your name, profile
                               photo, biography, submitted content and saved playlists will be available to all visitors
                               — however your personal contact information will not be visible without your consent.</p>
@@ -100,7 +100,7 @@
 
                             </div>
                             <div class="f-p untuck a-checkbox__label">
-                              You agree to our <a href="https://ourstory.livehumanly.com/content/terms"
+                              You agree to our <a href="terms.php"
                                 target="_blank">terms of use</a>
                             </div>
                           </label>
@@ -116,7 +116,7 @@
                       </div>
                     </form>
 
-                    <p class="m-form__btn"><a href="https://ourstory.livehumanly.com/signin"
+                    <p class="m-form__btn"><a href="login.php"
                         class="f-p o-contact_form__link">I'm already registered</a></p>
                   </div>
                 </div>
@@ -131,24 +131,6 @@
       </div>
       <?php require 'includes/modals.php'; ?>
     </div>
-
-    <div class="g-cookie" data-behavior="CookieConsent">
-      <span class="g-cookie__label">
-        This website uses cookies. <a href="/content/terms">Learn more</a>
-      </span>
-
-      <button class="g-cookie__close" data-CookieConsent-closebtn>
-
-        <svg class="icon--close-small" role="img" title="Close" aria-labelledby="icon--close-small-1">
-          <use xlink:href="#icon--close-small"></use>
-          <title id="icon--close-small-1">
-            Close
-          </title>
-        </svg>
-
-      </button>
-    </div>
-
   </div>
   <?php require 'includes/scripts.php'; ?>
 

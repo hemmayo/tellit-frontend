@@ -306,23 +306,6 @@
             <?php require 'includes/modals.php'; ?>
         </div>
 
-        <div class="g-cookie" data-behavior="CookieConsent">
-            <span class="g-cookie__label">
-                This website uses cookies. <a href="/content/terms">Learn more</a>
-            </span>
-
-            <button class="g-cookie__close" data-CookieConsent-closebtn>
-
-                <svg class="icon--close-small" role="img" title="Close" aria-labelledby="icon--close-small-1">
-                    <use xlink:href="#icon--close-small"></use>
-                    <title id="icon--close-small-1">
-                        Close
-                    </title>
-                </svg>
-
-            </button>
-        </div>
-
     </div>
     <?php require 'includes/scripts.php'; ?>
 
