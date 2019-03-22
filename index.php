@@ -155,18 +155,12 @@
                             </div>
                         </div>
 
-                        <main class="g-main">
+                        <main class="g-maihn">
 
 
-                            <div class="l-container@medium+ o-feed" data-behavior="Feed"
-                                data-Feed-url="https://ourstory.livehumanly.com/Home/getSearch"
-                                data-Feed-urlparams='{&quot;q&quot;:null,&quot;tag&quot;:null,&quot;page&quot;:1}'
-                                data-Feed-browserurl="/" data-Feed-browsertitle="Stories about :q">
+                            <div class="l-container@medium+" data-behavior=>
 
                                 <div data-Feed-inner>
-
-
-
                                     <div class="o-feed__item" data-behavior="FeedItem" data-Feed-item>
 
                                         <article class="m-story m-story--audio l-container@small-  bg-green is-visible"
@@ -285,8 +279,6 @@
                                         </article>
                                     </div>
                                 </div>
-
-
                             </div>
 
                         </main>
@@ -308,9 +300,6 @@
                         </div>
                         <?php require 'includes/footer.php'; ?>
 
-                    </div>
-
-                    <div class="g-overlay_layer">
                     </div>
                 </div>
             </div>
