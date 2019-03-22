@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Tellit</title>
+    <meta property="og:type" content="Stories" />
+    <meta property="og:title" content="" />
+    <meta property="og:description"
+        content="Tellit is a space for the children to be themselves, to speak and be seen, heard, and understood. It is a new paradigm for child support." />
+
+    <!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+    <script type="text/javascript">
+        var base_url = "";
+    </script>
+    <link href="css/app.css" rel="stylesheet" />
+
+    <script>
+        //var base_url = window.location.origin+'/';
+        //var base_url = window.location.origin;
+        // Contents to be minified and placed inline in the document header
+        // Doc: https://code.area17.com/a17/fe-boilerplate/wikis/js-head
+
+        // go go
+        (function (d) {
+            // set up a master object
+            var A17 = window.A17 || {},
+                de = d.documentElement,
+                w = window,
+                h = d.getElementsByTagName('head')[0],
+                s,
+                a;
+
+            // test for HTML5 vs HTML4 support, cutting the mustard
+            A17.browserSpec =
+                typeof d.querySelectorAll &&
+                'addEventListener' in w &&
+                w.history.pushState &&
+                d.implementation.hasFeature(
+                    'http://www.w3.org/TR/SVG11/feature#BasicStructure',
+                    '1.1'
+                ) ?
+                'html5' :
+                'html4';
+
+            // test for touch support. Caution: this is dangerous: https://hacks.mozilla.org/2013/04/detecting-touch-its-the-why-not-the-how/
+            A17.touch =
+                'ontouchstart' in w || (w.documentTouch && d instanceof DocumentTouch) ?
+                true :
+                false;
+
+            // testing for object fit support
+            A17.objectFit = 'objectFit' in de.style;
+
+            // expose A17
+            window.A17 = A17;
+
+            // add class names
+            de.className = de.className.replace(
+                /\bno-js\b/,
+                ' js ' +
+                A17.browserSpec +
+                (A17.touch ? ' touch' : ' no-touch') +
+                (A17.objectFit ? ' objectFit' : ' no-objectFit')
+            );
+
+            // disable all the stylesheets, except the html4css one
+            function disableSS() {
+                if (/in/.test(d.readyState)) {
+                    setTimeout(disableSS, 9);
+                } else {
+                    for (var i = 0; i < d.styleSheets.length; i++) {
+                        var ss = d.styleSheets[i];
+                        if (ss.title !== 'html4css') {
+                            ss.disabled = true;
+                        }
+                    }
+                }
+            }
+
+            // FF < 3.6 didn't have document.readyState - hacky shim for it
+            function disableSSff3() {
+                if (!d.readyState && d.addEventListener) {
+                    if (d.body) {
+                        setTimeout(function () {
+                            d.readyState = 'complete';
+                        }, 500);
+                    } else {
+                        setTimeout(disableSSff3, 9);
+                    }
+                }
+            }
+
+            // insert sprite SVG on DOM ready
+            function insSvg() {
+                if (/in/.test(d.readyState)) {
+                    setTimeout(insSvg, 9);
+                } else {
+                    var db = d.body;
+                    var s = d.createElement('div');
+                    s.className = 'svg-sprite';
+                    s.innerHTML = a.responseText;
+                    db.insertBefore(s, db.childNodes[0]);
+                }
+            }
+
+            if (A17.browserSpec === 'html4') {
+                // if an old browser - sort the page out for showing the html4css
+                s = d.createElement('link');
+                s.rel = 'stylesheet';
+                s.title = 'html4css';
+                s.href = base_url + 'css/html4css.css';
+                h.appendChild(s);
+                s = d.createElement('script');
+                s.src = '//legacypicturefill.s3.amazonaws.com/legacypicturefill.min.js';
+                h.appendChild(s);
+                disableSSff3();
+                disableSS();
+            } else {
+                s = d.createElement('script');
+                s.src =
+                    '//cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js';
+                h.appendChild(s);
+                // if not an old browser - ajax in the sprite
+                a = new XMLHttpRequest();
+                a.open('GET', base_url + 'icons/icons.svg', true);
+                a.send();
+                a.onload = function (e) {
+                    if (a.status >= 200 && a.status < 400) {
+                        insSvg();
+                    }
+                };
+            }
+
+            window.WebFontConfig = {
+                custom: {
+                    families: ['Matter-Regular', 'DomaineTextWeb-Light'],
+                    urls: [base_url + 'css/fonts.css'],
+                },
+                active: function () {
+                    var event = document.createEvent('HTMLEvents');
+                    event.initEvent('a17:fonts_loaded', true, true);
+                    event.eventName = 'a17:fonts_loaded';
+                    document.dispatchEvent(event);
+                },
+                fontactive: function (familyName, fvd) {
+                    var name =
+                        'wf-' +
+                        familyName.replace(/[\W_]+/g, '').toLowerCase() +
+                        '-' +
+                        fvd +
+                        '-active';
+                    var date = new Date();
+                    date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
+                    var expires = '; expires=' + date.toGMTString();
+                    document.cookie = 'A17_' + name + '=' + 1 + expires + '; path=/';
+                },
+            };
+
+            (function (d) {
+                let wf = d.createElement('script'),
+                    s = d.scripts[0];
+                wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+                wf.async = true;
+                s.parentNode.insertBefore(wf, s);
+            })(document);
+        })(document);
+    </script>
+</head>
+
+
+
+<body>
+    <div id="a17">
+
+
+
+        <div class="g-under_home_cover">
+            <header class="g-header l-container">
+                <div class="g-header__logo">
+                    <a href="/" data-behavior="CurrentNav FeedNavLink" data-CurrentNav-regex="\/">
+                        <h1 style="font-size: 2em">TellIt</h1>
+
+                    </a>
+                </div>
+                <nav class="g-header__nav">
+                    <ul class="g-nav">
+                        <li class="g-nav__item f-p"><a href="resources" class="a-nav_link">Resources</a></li>
+                        <li class="g-nav__item f-p"><a href="about" class="a-nav_link" data-behavior="CurrentNav"
+                                data-CurrentNav-regex="\/about">About</a></li>
+                        <li class="g-nav__item f-p"><a href="share" class="a-nav_link" data-behavior="CurrentNav"
+                                data-CurrentNav-regex="\/share">Stories</a></li>
+                        <li class="g-nav__item f-p" data-barba-usernav><a href="sign-in"
+                                class="a-nav_link a-nav_link--sign-in" data-behavior="CurrentNav ModalLink">Get
+                                Started</a></li>
+                    </ul>
+                </nav>
+                <a href="#mobile_nav" class="g-header__burger" data-behavior="ModalLink">
+                    <span class="hidden">Toggle menu</span>
+                    <span class="a-burger"><span></span></span>
+                </a>
+
+            </header>
+
+
+            <div data-pjax-wrapper="pjax">
+                <div data-pjax-container="pjax" data-namespace="main">
+
+
+                    <div class="g-base_content">
+
+
+                        <div class="l-container g-search m-search_field" data-behavior="SearchField">
+                            <div class="m-search_field__inner" data-SearchField-inner>
+                                <form class="m-search_field__form" data-SearchField-form autocomplete="off" novalidate>
+                                    <label for="search_field">
+
+                                        <svg class="icon--search-large" role="img" title="Search"
+                                            aria-labelledby="icon--search-large-1">
+                                            <use xlink:href="#icon--search-large"></use>
+                                            <title id="icon--search-large-1">
+                                                Search
+                                            </title>
+                                        </svg>
+
+                                    </label>
+                                    <input id="search_field" data-SearchField-input
+                                        data-behavior="AnalyticsClickTracking" data-AnalyticsClickTracking-label="query"
+                                        type="text" class="m-search_field__input f-p_sans" autocomplete="off"
+                                        autocorrect="off" autocapitalize="none" spellcheck="false">
+                                    <div class="m-search_field__populated_container">
+                                        <div class="m-search_field__input_text f-p_sans">
+                                            Stories about <strong data-SearchField-populatedvalue></strong>
+                                        </div>
+                                    </div>
+                                    <div class="m-search_field__placeholder_container">
+                                        <div class="m-search_field__input_text f-p_sans">
+                                            Search <span class="a-hide@small-">for&nbsp;</span>
+                                        </div>
+
+
+                                        <div class="m-search_field__suggest_container m-vertical_toggle m-vertical_toggle--slower a-hide@small-"
+                                            data-behavior="SearchSuggestCycle"
+                                            data-SearchSuggestCycle-suggestions='[&quot;Early Marriage&quot;,&quot;Bullying&quot;,&quot;Sexual Abuse&quot;,&quot;Emotional Abuse&quot;,&quot;Physical Abuse&quot;,&quot;Neglect&quot;]'>
+                                            <div class="m-vertical_toggle__inner">
+                                                <div class="m-vertical_toggle__item">
+                                                    <div class="m-search_field__input_text f-p_sans"
+                                                        data-SearchSuggestCycle-second>
+                                                        Early Marriage
+                                                    </div>
+                                                </div>
+                                                <div class="m-vertical_toggle__item">
+                                                    <div class="m-search_field__input_text f-p_sans"
+                                                        data-SearchSuggestCycle-first>
+                                                        Sexual Abuse
+                                                    </div>
+                                                </div>
+                                                <div class="m-vertical_toggle__item">
+                                                    <div class="m-search_field__input_text f-p_sans"
+                                                        data-SearchSuggestCycle-second>
+                                                        Emotional Abuse
+                                                    </div>
+                                                </div>
+                                                <div class="m-vertical_toggle__item">
+                                                    <div class="m-search_field__input_text f-p_sans"
+                                                        data-SearchSuggestCycle-second>
+                                                        Neglect
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="m-search_field__close btn" data-SearchField-closebtn>
+
+                                        <svg class="icon--close-large" role="img" title="Close"
+                                            aria-labelledby="icon--close-large-1">
+                                            <use xlink:href="#icon--close-large"></use>
+                                            <title id="icon--close-large-1">
+                                                Close
+                                            </title>
+                                        </svg>
+
+                                    </button>
+                                </form>
+                                <div class="m-search_field__tags">
+                                    <div class="m-horz_list m-horz_list--nowrap">
+                                        <a href="#" class="a-tag_btn m-horz_list__item" data-SearchField-tag="bully">
+                                            <span class="f-p">Bullying</span>
+                                        </a>
+                                        <a href="#" class="a-tag_btn m-horz_list__item"
+                                            data-SearchField-tag="early marriage">
+                                            <span class="f-p">Early Marriage</span>
+                                        </a>
+                                        <a href="#" class="a-tag_btn m-horz_list__item" data-SearchField-tag="body">
+                                            <span class="f-p">Sexual Abuse</span>
+                                        </a>
+                                        <a href="#" class="a-tag_btn m-horz_list__item"
+                                            data-SearchField-tag="friendships">
+                                            <span class="f-p">Physical</span>
+                                        </a>
+                                        <a href="#" class="a-tag_btn m-horz_list__item"
+                                            data-SearchField-tag="lifestyle">
+                                            <span class="f-p">Emotional</span>
+                                        </a>
+                                        <a href="#" class="a-tag_btn m-horz_list__item"
+                                            data-SearchField-tag="mindfulness">
+                                            <span class="f-p">Neglect</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="m-search_field__zero">
+                                    We didn’t find any results, please try again
+                                </div>
+                                <div class="m-search_field__actions">
+                                    <div class="m-horz_list">
+                                        <div class="m-horz_list__item">
+                                            <button class="a-btn a-btn--with_icon a-btn--type=primary"
+                                                data-behavior="PlayAllBtnSearch AnalyticsClickTracking"
+                                                data-AnalyticsClickTracking-label="search - share">
+
+                                                <svg class="icon--play-mini a-btn__icon" role="presentation">
+                                                    <use xlink:href="#icon--play-mini"></use>
+                                                    <title>
+                                                        play-mini icon
+                                                    </title>
+                                                </svg>
+
+                                                <div class="a-btn__label f-label_caps">Play All</div>
+                                            </button>
+                                        </div>
+                                        <div class="m-horz_list__item">
+                                            <a href="#global-share" class="a-btn a-btn--with_icon a-btn--type=secondary"
+                                                data-behavior="ModalLink AnalyticsClickTracking"
+                                                data-AnalyticsClickTracking-label="search - playlist"
+                                                data-ModalLink-payload='{"title": "Share this playlist with  family and friends"}'>
+
+                                                <svg class="icon--send-mini a-btn__icon" role="presentation">
+                                                    <use xlink:href="#icon--send-mini"></use>
+                                                    <title>
+                                                        send-mini icon
+                                                    </title>
+                                                </svg>
+
+                                                <div class="a-btn__label f-label_caps">Send</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <main class="g-main">
+
+
+                            <div class="l-container@medium+ o-feed" data-behavior="Feed"
+                                data-Feed-url="https://ourstory.livehumanly.com/Home/getSearch"
+                                data-Feed-urlparams='{&quot;q&quot;:null,&quot;tag&quot;:null,&quot;page&quot;:1}'
+                                data-Feed-browserurl="/" data-Feed-browsertitle="Stories about :q">
+
+                                <div data-Feed-inner>
+
+
+
+                                    <div class="o-feed__item" data-behavior="FeedItem" data-Feed-item>
+
+                                        <article class="m-story m-story--audio l-container@small-  bg-green is-visible"
+                                            data-behavior="StoryPlayerItem" data-Feed-itemid="584"
+                                            data-StoryPlayerItem-data='{&quot;story&quot;:{&quot;id&quot;:&quot;584&quot;,&quot;permalink&quot;:&quot;\/story\/584&quot;,&quot;author&quot;:&quot;Janet&quot;,&quot;tag&quot;:{&quot;id&quot;:&quot;2&quot;,&quot;title&quot;:&quot;Self-care&quot;,&quot;slug&quot;:null},&quot;audio&quot;:{&quot;url&quot;:&quot;https:\/\/ourstoryadmin.livehumanly.com\/sites\/default\/files\/2019-03\/7927fd8b-f7d3-4ed7-a0dd-772e4351696a.mp3&quot;,&quot;duration&quot;:165},&quot;transcript&quot;:&quot;&lt;p&gt;Our son Jake was diagnosed with a rare brain tumor at the age of 2 in 2012. He underwent a 6 hour brain surgery, 14 rounds of chemotherapy &amp;amp; 28 rounds of radiation. When Jake was 7 years old in 2017, he relapsed which required him to have another extensive brain surgery, 8 rounds of chemotherapy and 33 rounds of radiation.&amp;nbsp;We learned a lot about life from Jake\u2019s experience. Our family fed off his positive attitude, optimistic outlook, and how he always lived in the \u2018present\u2019. Jake taught us that no matter what the circumstance is, we have to live in the now. Even when the now seems ordinary and quiet, because the present is very special. Jake taught us that it\u2019s senseless to think about the past, because there\u2019s nothing we can do to change it. Jake\u2019s young mind also taught us that thinking about the future is pointless, because the future is never guaranteed. The now is the only thing worth focusing on and is the only thing we can control. As&amp;nbsp;adults&amp;nbsp;our minds start to wander more than a child\u2019s. We spend time thinking of moments long ago, or dream of, or&amp;nbsp;fear, a distant future. We are distracted and end up missing what\u2019s happening right in front of us. It\u2019s the quiet evenings at home with family that we should be present for, physically and mentally. It\u2019s the ordinary present that we should cherish. Whether we are going through a treatment, or feeling crummy, tired, beat up, or&amp;nbsp;whatever one is feeling or going through, make those moments as tolerable as possible. Because one day for us all, those moments will become memories, and we\u2019ll wish we cherished them as they were happening. We continue to live the way Jake did by focusing on what we can control now. What we can control is continuing the fight that Jake has started. We are continuing that fight under a 501(c)(3) Movement, fittingly called \u2018be like Jake\u2019. It\u2019s our mission to Raise Awareness and Funds for Childhood Cancer. We don\u2019t know what the future holds, but thankfully we\u2019ve learned, not to care. What we do know, is that we are making an impact for current children, and their families, because that\u2019s what we can control, and that\u2019s how we will \u2018be like Jake\u2019.&lt;\/p&gt;\r\n&quot;,&quot;resource&quot;:&quot;&quot;,&quot;saved&quot;:false},&quot;bgColor&quot;:&quot;green&quot;}'>
+                                            <h2 class="m-story__title f-p_sans">
+                                                <a href="?q=Janet ">Janet</a>, on <a href="?tag=Self-care">Bully</a>
+
+                                            </h2>
+                                            <div class="l-grid">
+                                                <p class="m-story__body l-grid__item f-p_serif"> Our son Jake was
+                                                    diagnosed with a rare brain tumor at the age of 2. Jake taught us
+                                                    that no matter what the circumstance is, we have to live in the now.
+                                                    Even when the now seems ordinary, and quiet …</p>
+                                            </div>
+                                            <div class="m-story__cta">
+                                                <button class="a-btn a-btn--type=primary a-btn--with_icon"
+                                                    data-behavior="PlayToggleBtn Tooltip" data-Tooltip-mouseover="true"
+                                                    data-Tooltip-title="Listen to the full story"
+                                                    data-PlayToggleBtn-storyid="584"
+                                                    onclick="dataLayer.push({'event': 'audio_play'});">
+
+                                                    <svg class="icon--play-mini a-btn__icon" role="img" title="Play"
+                                                        aria-labelledby="icon--play-mini-3" data-PlayToggleBtn-playicon>
+                                                        <use xlink:href="#icon--play-mini"></use>
+                                                        <title id="icon--play-mini-3">
+                                                            Play
+                                                        </title>
+                                                    </svg>
+
+
+                                                    <svg class="icon--pause-mini a-btn__icon" role="img" title="Pause"
+                                                        aria-labelledby="icon--pause-mini-2"
+                                                        data-PlayToggleBtn-pauseicon>
+                                                        <use xlink:href="#icon--pause-mini"></use>
+                                                        <title id="icon--pause-mini-2">
+                                                            Pause
+                                                        </title>
+                                                    </svg>
+
+                                                    <div class="a-btn__label f-label_caps">
+                                                        2:45
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="o-feed__item" data-behavior="FeedItem" data-Feed-item>
+                                        <article class="m-story m-story--text l-container@small-  bg-blue"
+                                            data-Feed-itemid="442">
+                                            <h2 class="m-story__title f-p_sans">
+                                                <a href="?q=Nita ">Nita</a>, on <a href="?tag=Lifestyle">Neglect</a>
+                                            </h2>
+                                            <div class="l-grid">
+                                                <p class="m-story__body l-grid__item f-p_serif">Just for today, laugh
+                                                    out loud, sing a song, be assertive, be silly, be happy, be strong.
+                                                    Just for today do it all once and then if you liked it tomorrow do
+                                                    it all once again.</p>
+                                            </div>
+                                            <div class="m-story__cta m-story__cta--inline_actions"
+                                                data-behavior="InlineActionsToggle">
+                                                <button class="a-btn a-btn--type=secondary a-btn--only_icon"
+                                                    data-behavior="Tooltip" data-Tooltip-mouseover="true"
+                                                    data-Tooltip-title="See story tools"
+                                                    data-InlineActionsToggle-toggle>
+
+                                                    <svg class="icon--kebab-horiz a-btn__icon" role="img" title="Tools"
+                                                        aria-labelledby="icon--kebab-horiz-1">
+                                                        <use xlink:href="#icon--kebab-horiz"></use>
+                                                        <title id="icon--kebab-horiz-1">
+                                                            Tools
+                                                        </title>
+                                                    </svg>
+
+                                                </button>
+                                                <div class="m-action_bar is-hidden" data-InlineActionsToggle-actions>
+                                                    <div class="m-action_bar__item m-action_bar__item--respond">
+                                                        <a href="#respond-modal" class="btn a-action_btn"
+                                                            data-behavior="ModalLink AnalyticsClickTracking"
+                                                            data-AnalyticsClickTracking-label="player - respond"
+                                                            data-ModalLink-payload="{&quot;id&quot;:&quot;442&quot;,&quot;story_owner&quot;:&quot;7&quot;,&quot;permalink&quot;:&quot;\/story\/442&quot;,&quot;status&quot;:&quot;Published&quot;,&quot;author&quot;:&quot;Nita&quot;,&quot;tag&quot;:{&quot;id&quot;:&quot;3&quot;,&quot;title&quot;:&quot;Lifestyle&quot;,&quot;slug&quot;:null},&quot;bg_color&quot;:&quot;blue&quot;,&quot;summary&quot;:&quot;Just for today, laugh out loud, sing a song, be assertive, be silly, be happy, be strong. Just for today do it all once and then if you liked it tomorrow do it all once again.&quot;,&quot;saved&quot;:false,&quot;resource&quot;:&quot;&quot;,&quot;transcript&quot;:&quot;&lt;p&gt;Just for today, laugh out loud, sing a song, be assertive, be silly, be happy, be strong. Just for today do it all once and then if you liked it tomorrow do it all once again.&lt;\/p&gt;\r\n&quot;,&quot;audio&quot;:{&quot;url&quot;:&quot;&quot;,&quot;duration&quot;:0}}">
+                                                            <div class="a-action_btn__icon">
+
+                                                                <svg class="icon--say-inactive" role="presentation">
+                                                                    <use xlink:href="#icon--say-inactive"></use>
+                                                                    <title>
+                                                                        say-inactive icon
+                                                                    </title>
+                                                                </svg>
+
+                                                            </div>
+                                                            <div class="f-label a-action_btn__label">Respond</div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="m-action_bar__item m-action_bar__item--send">
+                                                        <a href="#send-modal" class="btn a-action_btn"
+                                                            data-behavior="ModalLink AnalyticsClickTracking"
+                                                            data-AnalyticsClickTracking-label="player - send"
+                                                            data-ModalLink-payload="{&quot;id&quot;:&quot;442&quot;,&quot;story_owner&quot;:&quot;7&quot;,&quot;permalink&quot;:&quot;\/story\/442&quot;,&quot;status&quot;:&quot;Published&quot;,&quot;author&quot;:&quot;Nita&quot;,&quot;tag&quot;:{&quot;id&quot;:&quot;3&quot;,&quot;title&quot;:&quot;Lifestyle&quot;,&quot;slug&quot;:null},&quot;bg_color&quot;:&quot;blue&quot;,&quot;summary&quot;:&quot;Just for today, laugh out loud, sing a song, be assertive, be silly, be happy, be strong. Just for today do it all once and then if you liked it tomorrow do it all once again.&quot;,&quot;saved&quot;:false,&quot;resource&quot;:&quot;&quot;,&quot;transcript&quot;:&quot;&lt;p&gt;Just for today, laugh out loud, sing a song, be assertive, be silly, be happy, be strong. Just for today do it all once and then if you liked it tomorrow do it all once again.&lt;\/p&gt;\r\n&quot;,&quot;audio&quot;:{&quot;url&quot;:&quot;&quot;,&quot;duration&quot;:0}}">
+                                                            <div class="a-action_btn__icon">
+
+                                                                <svg class="icon--send-inactive" role="presentation">
+                                                                    <use xlink:href="#icon--send-inactive"></use>
+                                                                    <title>
+                                                                        send-inactive icon
+                                                                    </title>
+                                                                </svg>
+
+                                                            </div>
+                                                            <div class="f-label a-action_btn__label">Send</div>
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+
+                                <div class="o-feed__loader">
+                                    <div class="a-loader">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+
+                                <div class="o-feed__btn">
+                                    <button href="#" class="btn" data-behavior="AnalyticsClickTracking"
+                                        data-AnalyticsClickTracking-label="homepage load more - load more"
+                                        data-Feed-loadmorebtn>
+                                        <div class="f-p_sans">
+                                            Load More
+                                        </div>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </main>
+
+                        <div class="g-footer_tout">
+                            <div class="l-container">
+                                <div class="l-grid">
+                                    <div class="l-grid__item g-footer_tout__inner">
+                                        <h3 class="f-h3">Join the Tellit community and stay up to date</h3>
+
+                                        <a href="Joinus" class="a-btn a-btn--type=secondary g-footer_tout__btn"
+                                            data-behavior="AnalyticsClickTracking"
+                                            data-AnalyticsClickTracking-label="join the community - join us">
+                                            <span class="a-btn__label f-label_caps">Join the community</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="g-footer">
+                            <div class="g-footer__inner l-container">
+                                <ul class="g-footer_nav">
+                                    <li class="g-footer_nav__item f-p"><a href="#" target="_blank">Facebook</a></li>
+                                    <li class="g-footer_nav__item f-p"><a href="#" target="_blank">Twitter</a></li>
+                                    <li class="g-footer_nav__item f-p"><a href="#" target="_blank">Instagram</a></li>
+                                </ul>
+
+                                <ul class="g-footer_nav">
+                                    <li class="g-footer_nav__item f-p"><a href="contact"
+                                            data-behavior="AnalyticsClickTracking"
+                                            data-AnalyticsClickTracking-label="contact us - contact us">Contact</a></li>
+                                    <li class="g-footer_nav__item f-p" target="_blank"><a href="terms">Terms of use</a>
+                                    </li>
+                                    <li class="g-footer_nav__item f-p" target="_blank"><a href="privacy">Privacy
+                                            Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </footer>
+
+                    </div>
+
+                    <div class="g-overlay_layer">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="o-player" data-behavior="Overlay StoryPlayer" data-StoryPlayer-playlisturl="/api/getPlaylist.php?id=:id" data-StoryPlayer-interduration="10" data-StoryPlayer-intercount="3" data-StoryPlayer-interfirst id="player" data-Modal-outer> -->
+            <div class="o-player" data-behavior="Overlay StoryPlayer"
+                data-StoryPlayer-playlisturl="https://ourstory.livehumanly.com/playlists/get_playlist/:id"
+                data-StoryPlayer-interduration="10" data-StoryPlayer-intercount="3" data-StoryPlayer-interfirst
+                id="player" data-Modal-outer>
+                <div class="o-player__mid" data-StoryPlayer-mid data-StoryPlayer-bgcolor="pink">
+                    <audio controls data-StoryPlayer-audio class="hidden"></audio>
+                    <div class="o-player__title" data-StoryPlayer-title></div>
+                    <div class="o-player__progress a-progress_bar" data-StoryPlayer-progress>
+                        <div class="a-progress_bar__value" data-StoryPlayer-progressvalue></div>
+                    </div>
+                    <div class="o-player__play_toggle m-vertical_toggle" data-StoryPlayer-playverticaltoggle>
+                        <div class="m-vertical_toggle__inner">
+                            <div class="m-vertical_toggle__item">
+                                <button class="btn" data-StoryPlayer-playbtn>
+
+                                    <svg class="icon--play-small" role="img" title="Play"
+                                        aria-labelledby="icon--play-small-1">
+                                        <use xlink:href="#icon--play-small"></use>
+                                        <title id="icon--play-small-1">
+                                            Play
+                                        </title>
+                                    </svg>
+
+                                </button>
+                            </div>
+                            <div class="m-vertical_toggle__item">
+                                <button class="btn" data-StoryPlayer-pausebtn>
+
+                                    <svg class="icon--pause-small" role="img" title="Pause"
+                                        aria-labelledby="icon--pause-small-1">
+                                        <use xlink:href="#icon--pause-small"></use>
+                                        <title id="icon--pause-small-1">
+                                            Pause
+                                        </title>
+                                    </svg>
+
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o-player__close_btn">
+                        <button class="btn" data-Overlay-closebtn>
+
+                            <svg class="icon--down-arrow" role="img" title="Toggle player"
+                                aria-labelledby="icon--down-arrow-2">
+                                <use xlink:href="#icon--down-arrow"></use>
+                                <title id="icon--down-arrow-2">
+                                    Toggle player
+                                </title>
+                            </svg>
+
+                        </button>
+                    </div>
+
+                    <div class="o-player__animation"
+                        data-StoryPlayer-animation='{"path": "https://ourstory.livehumanly.com//lottie_animations", "count": 6}'>
+                    </div>
+
+                    <div class="o-player__inner" data-Overlay-inner>
+                        <div class="o-player__playlist_title f-p_sans" data-StoryPlayer-playlisttitle></div>
+                        <div class="o-player__controls">
+                            <div>
+                                <button class="btn" data-StoryPlayer-prevbtn>
+
+                                    <svg class="icon--play-previous" role="img" title="Previous"
+                                        aria-labelledby="icon--play-previous-1">
+                                        <use xlink:href="#icon--play-previous"></use>
+                                        <title id="icon--play-previous-1">
+                                            Previous
+                                        </title>
+                                    </svg>
+
+                                </button>
+                            </div>
+                            <div class="a-play_control a-play_control--type=primary m-vertical_toggle"
+                                data-StoryPlayer-playverticaltoggle>
+                                <div class="m-vertical_toggle__inner">
+                                    <button class="m-vertical_toggle__item l-centered btn" data-StoryPlayer-playbtn>
+
+                                        <svg class="icon--play-large" role="img" title="Play"
+                                            aria-labelledby="icon--play-large-1">
+                                            <use xlink:href="#icon--play-large"></use>
+                                            <title id="icon--play-large-1">
+                                                Play
+                                            </title>
+                                        </svg>
+
+                                    </button>
+                                    <button class="m-vertical_toggle__item l-centered btn" data-StoryPlayer-pausebtn>
+
+                                        <svg class="icon--pause-large" role="img" title="Pause"
+                                            aria-labelledby="icon--pause-large-1">
+                                            <use xlink:href="#icon--pause-large"></use>
+                                            <title id="icon--pause-large-1">
+                                                Pause
+                                            </title>
+                                        </svg>
+
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn" data-StoryPlayer-nextbtn>
+
+                                    <svg class="icon--play-next" role="img" title="Next"
+                                        aria-labelledby="icon--play-next-1">
+                                        <use xlink:href="#icon--play-next"></use>
+                                        <title id="icon--play-next-1">
+                                            Next
+                                        </title>
+                                    </svg>
+
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="o-player__action_bar m-action_bar">
+                        <div class="m-action_bar__item">
+                            <a href="#respond-modal" class="btn a-action_btn"
+                                data-behavior="ModalLink AnalyticsClickTracking"
+                                data-AnalyticsClickTracking-label="player - respond">
+                                <div class="a-action_btn__icon">
+
+                                    <svg class="icon--say-inactive" role="presentation">
+                                        <use xlink:href="#icon--say-inactive"></use>
+                                        <title>
+                                            say-inactive icon
+                                        </title>
+                                    </svg>
+
+                                </div>
+                                <div class="f-label a-action_btn__label">Respond</div>
+                            </a>
+                        </div>
+                        <div class="m-action_bar__item">
+                            <a href="#send-modal" class="btn a-action_btn"
+                                data-behavior="ModalLink AnalyticsClickTracking"
+                                data-AnalyticsClickTracking-label="player - send">
+                                <div class="a-action_btn__icon">
+
+                                    <svg class="icon--send-inactive" role="presentation">
+                                        <use xlink:href="#icon--send-inactive"></use>
+                                        <title>
+                                            send-inactive icon
+                                        </title>
+                                    </svg>
+
+                                </div>
+                                <div class="f-label a-action_btn__label">Send</div>
+                            </a>
+                        </div>
+                        <div class="m-action_bar__item">
+                            <a href="#read-modal" class="btn a-action_btn"
+                                data-behavior="ModalLink AnalyticsClickTracking"
+                                data-AnalyticsClickTracking-label="player - read">
+                                <div class="a-action_btn__icon">
+
+                                    <svg class="icon--read-inactive" role="presentation">
+                                        <use xlink:href="#icon--read-inactive"></use>
+                                        <title>
+                                            read-inactive icon
+                                        </title>
+                                    </svg>
+
+                                </div>
+                                <div class="f-label a-action_btn__label">Read</div>
+                            </a>
+                        </div>
+                        <div class="m-action_bar__item" data-behavior="StoryResourceBtn">
+                            <a href="#resource-modal" class="btn a-action_btn"
+                                data-behavior="ModalLink AnalyticsClickTracking"
+                                data-AnalyticsClickTracking-label="player - resource">
+                                <div class="a-action_btn__icon">
+
+                                    <svg class="icon--resource-inactive" role="presentation">
+                                        <use xlink:href="#icon--resource-inactive"></use>
+                                        <title>
+                                            resource-inactive icon
+                                        </title>
+                                    </svg>
+
+                                </div>
+                                <div class="f-label a-action_btn__label">Resource</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="o-player__inter">
+                        <audio title="Share Your Story" src="sample_files/sample.mp3" controls
+                            data-StoryPlayer-interaudio class="hidden"></audio>
+                        <svg class="o-player__inter__bg" width="1269" height="613" viewBox="0 0 1269 613" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" role="presentation">
+                            <title>Interstitial animation</title>
+                            <path
+                                d="M115.487 575.239C113.064 510.459 136.127 451.055 179.903 407.999C203.281 385.005 226.096 361.57 246.465 336.224C295.745 274.899 359.802 173.3 405.852 109.45C425.375 82.3801 461.51 70.9612 498.825 80.0003C523.667 86.0176 548.384 92.517 572.484 101.413C653.255 131.228 733.615 163.488 812.626 198.988C863.979 222.062 914.716 249.489 961.713 281.129C988.96 299.473 1017.34 327.643 1029.55 355.493C1083.13 477.651 1131.53 601.189 1179.98 724.623C1184.28 735.593 1176.5 749.93 1172.29 761.784C1169.81 768.741 1166.77 775.443 1163.57 782.074C1157.23 795.201 1148.53 806.928 1137.97 816.974C1078.54 873.502 1019.11 930.03 959.677 986.558C949.232 996.492 937.061 1004.71 923.431 1010.71C919.995 1012.23 916.543 1013.72 913.06 1015.15C857.728 1037.92 803.34 1062.49 746.556 1082.52C713.701 1094.1 679.604 1084.64 646.425 1059.58C538.33 977.957 410.534 935.048 301.565 854.568C289.216 845.448 275.619 838.008 262.601 829.789C255.347 822.444 248.093 815.099 240.838 807.753C237.956 804.968 235.075 802.184 232.192 799.399L218.461 786.737C156.009 729.149 118.537 652.548 115.528 576.321L115.487 575.239Z"
+                                fill="#F2A149" />
+                        </svg>
+                        <div class="o-player__inter__top">
+                            <ul class="m-horz_list">
+                                <li class="m-horz_list__item">
+                                    <button class="a-play_control a-play_control--type=primary"
+                                        data-StoryPlayer-interreplaybtn>
+
+                                        <svg class="icon--replay" role="img" title="Replay"
+                                            aria-labelledby="icon--replay-1">
+                                            <use xlink:href="#icon--replay"></use>
+                                            <title id="icon--replay-1">
+                                                Replay
+                                            </title>
+                                        </svg>
+
+                                    </button>
+                                </li>
+                                <li class="m-horz_list__item">
+                                    <button class="a-play_control a-play_control--type=primary"
+                                        data-StoryPlayer-internextbtn>
+                                        <span class="a-play_control__sub_label f-label">Next</span>
+                                        <span class="a-play_control__main_label f-play_control_main_label"
+                                            data-StoryPlayer-interdurationlabel>10</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="o-player__inter__bottom">
+                            <div class="f-h4">Inspired to share your story from your own life?</div>
+                            <a href="/share" class="a-btn a-btn--type=secondary" data-behavior="OverlayCloseBtn">
+                                <span class="a-btn__label f-label_caps">Share Your Story</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <a href="#" class="g-back_to_top f-label_caps untuck" data-behavior="BackToTop">
+                Back To Top
+            </a>
+
+            <nav class="g-mobile_nav" data-behavior="MobileNav" id="mobile_nav">
+                <button class="g-mobile_nav__close btn" data-MobileNav-closebtn>
+
+                    <svg class="icon--close-large" role="img" title="Close" aria-labelledby="icon--close-large-2">
+                        <use xlink:href="#icon--close-large"></use>
+                        <title id="icon--close-large-2">
+                            Close
+                        </title>
+                    </svg>
+
+                </button>
+                <div class="g-mobile_nav__main">
+                    <ul class="g-mobile_nav__main__inner">
+                        <li class="f-h2">
+                            <a href="playlists">
+                                Playlists
+                            </a>
+                        </li>
+                        <li class="f-h2">
+                            <a href="resources">
+                                Resources
+                            </a>
+                        </li>
+                        <li class="f-h2">
+                            <a href="about">
+                                About
+                            </a>
+                        </li>
+                        <li class="f-h2">
+                            <a href="share">
+                                Share
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-mobile_nav__aux">
+                    <ul class="g-mobile_nav__aux__inner">
+                        <li class="f-p">
+                            <a href="https://www.facebook.com/livehumanly.behumanly">
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="f-p">
+                            <a href="https://twitter.com/live__humanly">
+                                Twitter
+                            </a>
+                        </li>
+                        <li class="f-p">
+                            <a href="https://www.instagram.com/live.humanly">
+                                Instagram
+                            </a>
+                        </li>
+                        <li class="f-p">
+                            <a href="contact">
+                                Contact
+                            </a>
+                        </li>
+                        <li class="f-p">
+                            <a href="content/terms">
+                                Terms of use
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <div class="m-modal m-modal--fixed m-modal--send g-modal" data-behavior="Modal" id="global-share">
+                <div class="m-modal__stretch">
+                    <div class="m-modal__inner" data-Modal-inner>
+
+                        <div class="m-modal__mid" data-Modal-scrollable>
+
+                            <div class="m-modal__title f-p" data-Modal-title>
+                                Share this story with family and friends
+                            </div>
+                            <div class="m-modal__main">
+
+                                <ul class="m-vert_list" data-behavior="SocialSharingButtons"
+                                    data-SocialSharingButtons-baseurl="https://ourstory.livehumanly.com/">
+                                    <li class="m-vert_list__item">
+                                        <a href="#" class="a-choice btn" data-SocialSharingButtons-btn="facebook">
+                                            <div class="a-choice__inner">
+                                                <span class="a-choice__icon">
+
+                                                    <svg class="icon--facebook" role="presentation">
+                                                        <use xlink:href="#icon--facebook"></use>
+                                                        <title>
+                                                            facebook icon
+                                                        </title>
+                                                    </svg>
+
+                                                </span>
+                                                <div class="f-p untuck">Facebook</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="m-vert_list__item">
+                                        <a href="#" class="a-choice btn" data-SocialSharingButtons-btn="twitter"
+                                            data-SocialSharingButtons-via="live__humanly">
+                                            <div class="a-choice__inner">
+                                                <span class="a-choice__icon">
+
+                                                    <svg class="icon--twitter" role="presentation">
+                                                        <use xlink:href="#icon--twitter"></use>
+                                                        <title>
+                                                            twitter icon
+                                                        </title>
+                                                    </svg>
+
+                                                </span>
+                                                <div class="f-p untuck">Twitter</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="m-vert_list__item">
+                                        <a href="mailto:?body=:sharetitle%20:shareurl&subject=Shared%20link%20from%20Humanly"
+                                            class="a-choice btn" data-SocialSharingButtons-btn="email">
+                                            <div class="a-choice__inner">
+                                                <span class="a-choice__icon">
+
+                                                    <svg class="icon--email" role="presentation">
+                                                        <use xlink:href="#icon--email"></use>
+                                                        <title>
+                                                            email icon
+                                                        </title>
+                                                    </svg>
+
+                                                </span>
+                                                <div class="f-p untuck">Email</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <button data-Modal-closebtn class="btn f-p untuck m-modal__close_btn">
+                            Close
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-modal m-modal--fixed m-modal--bg=transparent m-modal--response o-player__modal g-modal"
+                data-behavior="Modal RespondFlow" id="respond-modal">
+                <div class="m-modal__stretch">
+                    <div class="m-modal__inner" data-Modal-inner>
+
+                        <div class="m-modal__mid" data-Modal-scrollable>
+
+                            <div class="m-modal__title f-p">
+                                Choose a private response  to send to <span data-RespondFlow-authorname></span>
+                            </div>
+                            <div class="m-modal__main">
+
+                                <form data-behavior="AjaxForm"
+                                    data-AjaxForm-url="https://ourstory.livehumanly.com/playlists/sendResponse"
+                                    data-RespondFlow-form>
+
+                                    <input type="hidden" name="story_id" value="" data-RespondFlow-storyid>
+
+                                    <ul class="m-vert_list">
+                                        <li class="m-vert_list__item">
+                                            <label class="a-choice">
+                                                <input type="radio" class="a-choice__input" name="response_choice"
+                                                    value="went-through" data-AjaxForm-radiosubmit
+                                                    data-RespondFlow-choice="&amp;#128524;">
+                                                <div class="a-choice__inner">
+                                                    <!--<span class="a-choice__icon">&amp;#128524;</span>-->
+                                                    <span class="a-choice__icon">&#128524;</span>
+                                                    <!--<span class="a-choice__icon"><img src="https://ourstory.livehumanly.com/common/images/sad.png"></span>-->
+                                                    <div class="f-p untuck">I went through that too</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="m-vert_list__item">
+                                            <label class="a-choice">
+                                                <input type="radio" class="a-choice__input" name="response_choice"
+                                                    value="helped" data-AjaxForm-radiosubmit
+                                                    data-RespondFlow-choice="&amp;#128522;">
+                                                <div class="a-choice__inner">
+                                                    <!--<span class="a-choice__icon">&amp;#128522;</span>-->
+                                                    <span class="a-choice__icon">&#128522;</span>
+                                                    <!--<span class="a-choice__icon"><img src="https://ourstory.livehumanly.com/common/images/happy.png"></span>-->
+                                                    <div class="f-p untuck">This really helped me</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="m-vert_list__item">
+                                            <label class="a-choice">
+                                                <input type="radio" class="a-choice__input" name="response_choice"
+                                                    value="thanks" data-AjaxForm-radiosubmit
+                                                    data-RespondFlow-choice="&amp;#128155;">
+                                                <div class="a-choice__inner">
+                                                    <!--<span class="a-choice__icon">&amp;#128155;</span>-->
+                                                    <span class="a-choice__icon">&#128155;</span>
+                                                    <!--<span class="a-choice__icon"><img src="https://ourstory.livehumanly.com/common/images/heart.png"></span>-->
+                                                    <div class="f-p untuck">Thanks for sharing</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                    </ul>
+
+                                </form>
+
+                            </div>
+
+                            <div class="m-modal--response__thanks" data-RespondFlow-thanks>
+                                <p class="f-p">Thank you for contributing to  the Humanly community, sign up  to stay
+                                    updated</p>
+                                <a href="/Joinus" class="a-btn a-btn--type=secondary">
+                                    <span class="f-label_caps a-btn__label">Join the Community</span>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <button data-Modal-closebtn class="btn f-p untuck m-modal__close_btn">
+                            Close
+                        </button>
+
+                        <div class="m-modal--response__sent" data-RespondFlow-sent>
+                            <!--<span class="m-modal--response__sent__emoji" data-RespondFlow-emoji></span>-->
+                            <p class="f-p">Your response has been sent to <span data-RespondFlow-authorname></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="m-modal m-modal--fixed m-modal--bg=transparent m-modal--send o-player__modal g-modal"
+                data-behavior="Modal" id="send-modal">
+                <div class="m-modal__stretch">
+                    <div class="m-modal__inner" data-Modal-inner>
+
+                        <div class="m-modal__mid" data-Modal-scrollable>
+
+                            <div class="m-modal__title f-p" data-Modal-title>
+                                Share this story with family and friends
+                            </div>
+                            <div class="m-modal__main">
+
+                                <ul class="m-vert_list" data-behavior="SocialSharingButtons"
+                                    data-SocialSharingButtons-baseurl="https://ourstory.livehumanly.com/"
+                                    data-SocialSharingButtons-sendstory="1">
+                                    <li class="m-vert_list__item">
+                                        <a href="#" class="a-choice btn" data-SocialSharingButtons-btn="facebook">
+                                            <div class="a-choice__inner">
+                                                <span class="a-choice__icon">
+
+                                                    <svg class="icon--facebook" role="presentation">
+                                                        <use xlink:href="#icon--facebook"></use>
+                                                        <title>
+                                                            facebook icon
+                                                        </title>
+                                                    </svg>
+
+                                                </span>
+                                                <div class="f-p untuck">Facebook</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="m-vert_list__item">
+                                        <a href="#" class="a-choice btn" data-SocialSharingButtons-btn="twitter"
+                                            data-SocialSharingButtons-via="live__humanly">
+                                            <div class="a-choice__inner">
+                                                <span class="a-choice__icon">
+
+                                                    <svg class="icon--twitter" role="presentation">
+                                                        <use xlink:href="#icon--twitter"></use>
+                                                        <title>
+                                                            twitter icon
+                                                        </title>
+                                                    </svg>
+
+                                                </span>
+                                                <div class="f-p untuck">Twitter</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="m-vert_list__item">
+                                        <a href="mailto:?body=:sharetitle%20:shareurl&subject=Shared%20link%20from%20Humanly"
+                                            class="a-choice btn" data-SocialSharingButtons-btn="email">
+                                            <div class="a-choice__inner">
+                                                <span class="a-choice__icon">
+
+                                                    <svg class="icon--email" role="presentation">
+                                                        <use xlink:href="#icon--email"></use>
+                                                        <title>
+                                                            email icon
+                                                        </title>
+                                                    </svg>
+
+                                                </span>
+                                                <div class="f-p untuck">Email</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <button data-Modal-closebtn class="btn f-p untuck m-modal__close_btn">
+                            Close
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-modal m-modal--fixed m-modal--bg=transparent m-modal--read o-player__modal g-modal"
+                data-behavior="Modal" id="read-modal">
+                <div class="m-modal__stretch">
+                    <div class="m-modal__inner" data-Modal-inner>
+
+                        <div class="m-modal__mid" data-Modal-scrollable>
+
+                            <div class="m-modal__body" data-behavior="StoryTranscript">
+
+                            </div>
+
+                        </div>
+
+                        <button data-Modal-closebtn class="btn f-p untuck m-modal__close_btn">
+                            Close
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-modal m-modal--fixed m-modal--bg=transparent m-modal--resource o-player__modal g-modal"
+                data-behavior="Modal" id="resource-modal">
+                <div class="m-modal__stretch">
+                    <div class="m-modal__inner" data-Modal-inner>
+
+                        <div class="m-modal__mid" data-Modal-scrollable>
+
+                            <div class="m-modal__body" data-behavior="StoryResource">
+                                <p data-StoryResource-body class="f-p"></p>
+                                <p>
+                                    <a href="#" data-StoryResource-link class="a-btn a-btn--type=secondary"
+                                        target="_blank">
+                                        <span class="f-label_caps a-btn__label">Visit Resource</span>
+                                    </a>
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <button data-Modal-closebtn class="btn f-p untuck m-modal__close_btn">
+                            Close
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-modal m-modal--fixed m-modal--signin g-modal" data-behavior="Modal" id="signin"
+                data-AjaxFormResponses-modal="sign-in-modal">
+                <div class="m-modal__stretch">
+                    <div class="m-modal__inner" data-Modal-inner>
+
+                        <div class="m-modal__mid" data-Modal-scrollable>
+
+                            <div class="m-modal__body" data-behavior="">
+
+                                <div class="o-contact_form o-contact_form--sign-in">
+                                    <h2 class="f-h5 o-contact_form__subtitle">Sign in</h2>
+                                    <form class="m-form o-contact_form__form" data-behavior="AjaxForm AjaxFormResponses"
+                                        data-AjaxForm-url="https://ourstory.livehumanly.com/signin/signin_process"
+                                        data-AjaxForm-formType="signin" data-AjaxFormResponses-modalName="sign-in-modal"
+                                        action="/signin" method="post">
+                                        <div class="m-form__section">
+                                            <div class="m-form__item">
+                                                <label class="a-field">
+                                                    <input type="text" name="username" value="" class="a-field__input"
+                                                        data-behavior="PopulatedInput" required>
+                                                    <div class="a-field__placeholder">
+                                                        Username (email)
+                                                    </div>
+                                                </label>
+                                                <span class="desc"></span> </div>
+                                            <div class="m-form__item">
+                                                <label class="a-field">
+                                                    <input type="password" name="password" value=""
+                                                        class="a-field__input" data-behavior="PopulatedInput" required>
+                                                    <div class="a-field__placeholder">
+                                                        Password
+                                                    </div>
+                                                </label>
+                                                <span class="desc"></span> </div>
+                                        </div>
+                                        <div class="l-grid l-grid--between">
+                                            <p class="m-form__btn l-grid__item">
+                                                <a href="Signin/forgot_password"
+                                                    class="f-label o-contact_form__link">Forgot password? </a>
+                                            </p>
+                                            <p class="m-form__btn l-grid__item">
+                                                <button class="a-btn a-btn--type=secondary" type="submit">
+                                                    <div class="a-btn__label f-label_caps">
+                                                        Sign In
+                                                    </div>
+                                                </button>
+                                            </p>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="o-contact_form o-contact_form--sign-in">
+                                    <h2 class="f-h5 o-contact_form__subtitle">Not registered yet?</h2>
+                                    <p class="m-form__btn">
+                                        <a href="signin/create_profile" class="a-btn a-btn--type=secondary">
+                                            <span class="a-btn__label f-label_caps">Create a Profile</span>
+                                        </a>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <button data-Modal-closebtn class="btn f-p untuck m-modal__close_btn">
+                            Close
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="o-player-intro" data-behavior="IntroPlayer"
+            data-IntroPlayer-src="https://ourstoryadmin.livehumanly.com/sites/default/files/2018-10/Nita%20intro%20160_0.mp3"
+            data-IntroPlayer-duration="123">
+            <audio title="Our Story" controls data-IntroPlayer-audio class="hidden"></audio>
+            <div class="o-player-intro__title">Our Story</div>
+            <div class="o-player-intro__progress a-progress_bar" data-IntroPlayer-progress>
+                <div class="a-progress_bar__value" data-IntroPlayer-progressvalue></div>
+            </div>
+            <div class="o-player-intro__play_toggle m-vertical_toggle" data-IntroPlayer-playverticaltoggle>
+                <div class="m-vertical_toggle__inner">
+                    <div class="m-vertical_toggle__item">
+                        <button class="btn" data-IntroPlayer-playbtn>
+
+                            <svg class="icon--play-small" role="img" title="Play" aria-labelledby="icon--play-small-2">
+                                <use xlink:href="#icon--play-small"></use>
+                                <title id="icon--play-small-2">
+                                    Play
+                                </title>
+                            </svg>
+
+                        </button>
+                    </div>
+                    <div class="m-vertical_toggle__item">
+                        <button class="btn" data-IntroPlayer-pausebtn>
+
+                            <svg class="icon--pause-small" role="img" title="Pause"
+                                aria-labelledby="icon--pause-small-2">
+                                <use xlink:href="#icon--pause-small"></use>
+                                <title id="icon--pause-small-2">
+                                    Pause
+                                </title>
+                            </svg>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="g-cookie" data-behavior="CookieConsent">
+            <span class="g-cookie__label">
+                This website uses cookies. <a href="/content/terms">Learn more</a>
+            </span>
+
+            <button class="g-cookie__close" data-CookieConsent-closebtn>
+
+                <svg class="icon--close-small" role="img" title="Close" aria-labelledby="icon--close-small-1">
+                    <use xlink:href="#icon--close-small"></use>
+                    <title id="icon--close-small-1">
+                        Close
+                    </title>
+                </svg>
+
+            </button>
+        </div>
+
+    </div>
+    <script src="js/polyfill.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
