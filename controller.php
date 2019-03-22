@@ -4,7 +4,7 @@ ini_set('memory_limit', '512M');
 ini_set('max_execution_time', 300);
 
 const API = [
-    "master_key" => 'sCC5P5xLjLEZ63vQ0oxpvAy92IObmMfI',
+    "master_key" => 'helloworldmaster',
     "base_url" => 'http://tellit-api.herokuapp.com',
     "paystack_secret_key" => 'sk_live_cc2f74fc7a3061afd13150db3a4d35f80ab38b4e',
     "paystack_public_key" => 'pk_live_7df368c0db35d6247cd2ad2a2be35b936c425076',
