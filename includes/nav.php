@@ -6,13 +6,13 @@
     </div>
     <nav class="g-header__nav">
         <ul class="g-nav">
-            <li class="g-nav__item f-p"><a href="resources" class="a-nav_link">Resources</a></li>
-            <li class="g-nav__item f-p"><a href="about" class="a-nav_link" data-behavior="CurrentNav"
+            <li class="g-nav__item f-p"><a href="resources.php" class="a-nav_link">Resources</a></li>
+            <li class="g-nav__item f-p"><a href="about.php" class="a-nav_link" data-behavior="CurrentNav"
                     data-CurrentNav-regex="\/about">About</a></li>
             <li class="g-nav__item f-p"><a href="share" class="a-nav_link" data-behavior="CurrentNav"
                     data-CurrentNav-regex="\/share">Stories</a></li>
-            <li class="g-nav__item f-p" data-barba-usernav><a href="sign-in" class="a-nav_link a-nav_link--sign-in"
-                    data-behavior="CurrentNav ModalLink">Get
+            <li class="g-nav__item f-p" data-barba-usernav><a href="login.php" class="a-nav_link a-nav_link--sign-in"
+                    data-behavior="CurrentNav">Get
                     Started</a></li>
         </ul>
     </nav>

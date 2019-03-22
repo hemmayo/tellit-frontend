@@ -194,9 +194,7 @@
     </div>
 
   </div>
-  <script src="js/polyfill.min.js"></script>
-  <script src="js/app.js"></script>
-
+  <?php require 'includes/scripts.php'; ?>
 </body>
 
 </html>

@@ -29,10 +29,7 @@
                 <div class="l-grid">
                   <div class="l-grid__item o-contact_form o-contact_form--sign-in">
                     <h2 class="f-h5 o-contact_form__subtitle">Sign in </h2>
-                    <form class="m-form o-contact_form__form" data-behavior="AjaxForm AjaxFormResponses"
-                      data-ajaxform-url="https://ourstory.livehumanly.com/signin/signin_process"
-                      data-ajaxform-formtype="signin" data-ajaxformresponses-modalname="sign-in-modal" action="/signin"
-                      method="post">
+                    <form class="m-form o-contact_form__form" id="login-form">
                       <div class="m-form__section">
                         <div class="m-form__item">
                           <label class="a-field">
@@ -105,9 +102,7 @@
     </div>
 
   </div>
-  <script src="js/polyfill.min.js"></script>
-  <script src="js/app.js"></script>
-
+  <?php require 'includes/scripts.php'; ?>
 </body>
 
 </html>
