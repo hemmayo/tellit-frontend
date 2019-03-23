@@ -1,7 +1,7 @@
 <header class="g-header l-container">
     <div class="g-header__logo">
         <a href="/" data-behavior="CurrentNav FeedNavLink" data-CurrentNav-regex="\/">
-            <h1 style="font-size: 2em">TellIt</h1>
+            <h1 style="font-size: 2em">Tellit</h1>
         </a>
     </div>
     <nav class="g-header__nav">
@@ -9,8 +9,8 @@
             <li class="g-nav__item f-p"><a href="resources.php" class="a-nav_link">Resources</a></li>
             <li class="g-nav__item f-p"><a href="about.php" class="a-nav_link" data-behavior="CurrentNav"
                     data-CurrentNav-regex="\/about">About</a></li>
-            <li class="g-nav__item f-p"><a href="share" class="a-nav_link" data-behavior="CurrentNav"
-                    data-CurrentNav-regex="\/share">Stories</a></li>
+            <li class="g-nav__item f-p"><a href="stories.php" class="a-nav_link" data-behavior="CurrentNav"
+                    data-CurrentNav-regex="\/stories">Stories</a></li>
             <li class="g-nav__item f-p" data-barba-usernav><a href="login.php" class="a-nav_link a-nav_link--sign-in"
                     data-behavior="CurrentNav">Get
                     Started</a></li>

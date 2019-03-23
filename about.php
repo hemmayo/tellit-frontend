@@ -21,26 +21,13 @@
                                     <div class="m-page_header__inner">
                                         <picture>
                                             <source
-                                                srcset="https://ourstoryadmin.livehumanly.com/sites/default/files/styles/axsmall/public/frontend/aboutimg.jpg"
+                                                srcset="https://images.unsplash.com/photo-1497375638960-ca368c7231e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1925&q=80"
                                                 media="(max-width: 449px)">
-                                            <source
-                                                srcset="https://ourstoryadmin.livehumanly.com/sites/default/files/styles/asmall/public/frontend/aboutimg.jpg"
-                                                media="(min-width: 450px) and (max-width: 759px)">
-                                            <source
-                                                srcset="https://ourstoryadmin.livehumanly.com/sites/default/files/styles/amedium/public/frontend/aboutimg.jpg"
-                                                media="(min-width: 760px) and (max-width: 899px)">
-                                            <source
-                                                srcset="https://ourstoryadmin.livehumanly.com/sites/default/files/styles/alarge/public/frontend/aboutimg.jpg"
-                                                media="(min-width: 900px) and (max-width: 1309px)">
-                                            <source
-                                                srcset="https://ourstoryadmin.livehumanly.com/sites/default/files/styles/axlarge/public/frontend/aboutimg.jpg"
-                                                media="(min-width: 1310px)">
-
-                                            <img src="https://ourstoryadmin.livehumanly.com/sites/default/files/styles/axsmall/public/frontend/aboutimg.jpg"
+                                            <img src="https://images.unsplash.com/photo-1497375638960-ca368c7231e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1925&q=80"
                                                 alt="About Our Story" class="m-page_header__image">
                                         </picture>
                                         <h1 class="f-h1 m-page_header__title">
-                                            <span>About</span> <span>Our Story</span>
+                                            <span>About</span> <span>Tellit</span>
                                         </h1>
                                     </div>
                                 </header>
@@ -49,11 +36,9 @@
                                     <div class="l-grid l-grid--center">
                                         <div class="l-grid__item m-page_body">
                                             <p>Our Story is a new social network that captures humanly experiences of
-                                                living with cancer—the moments of tender exchange that reveal real human
-                                                stories, needs, and connections.</p>
+                                                abused children and provide help for them.</p>
 
-                                            <p>We interviewed women and men—patients, survivors, nurses, and
-                                                caregivers—from around the country.&nbsp; As Humanly Ambassadors, they
+                                            <p>We interviewed children and parents, they
                                                 shared their stories with us—what they care about, what has been most
                                                 difficult to overcome, and what brings meaning to their lives.</p>
 
@@ -70,33 +55,19 @@
                                         class="m-share_story m-share_story--tall m-share_story--full-width m-share_story--center">
                                         <picture>
                                             <source
-                                                srcset="https://ourstoryadmin.livehumanly.com/sites/default/files/styles/h449/public/frontend/nita_1.jpg"
+                                                srcset="https://images.unsplash.com/photo-1519237966462-3b578ee746f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2116&q=80"
                                                 media="(max-width: 449px)">
-                                            <source
-                                                srcset="https://ourstoryadmin.livehumanly.com/sites/default/files/styles/h7591/public/frontend/nita_1.jpg"
-                                                media="(min-width: 450px) and (max-width: 759px)">
-                                            <source
-                                                srcset="https://ourstoryadmin.livehumanly.com/sites/default/files/styles/h899/public/frontend/nita_1.jpg"
-                                                media="(min-width: 760px) and (max-width: 899px)">
-                                            <source
-                                                srcset="https://ourstoryadmin.livehumanly.com/sites/default/files/styles/h1309/public/frontend/nita_1.jpg"
-                                                media="(min-width: 900px) and (max-width: 1309px)">
-                                            <source
-                                                srcset="https://ourstoryadmin.livehumanly.com/sites/default/files/styles/h1400/public/frontend/nita_1.jpg"
-                                                media="(min-width: 1310px) and (max-width: 1399px)">
-                                            <source
-                                                srcset="https://ourstoryadmin.livehumanly.com/sites/default/files/styles/h2000/public/frontend/nita_1.jpg"
-                                                media="(min-width: 1400px)">
+                                           
 
-                                            <img src="https://ourstoryadmin.livehumanly.com/sites/default/files/styles/h449/public/frontend/nita_1.jpg"
+                                            <img src="https://images.unsplash.com/photo-1519237966462-3b578ee746f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2116&q=80"
                                                 alt="A tender moment" class="m-share_story__img">
                                         </picture>
                                         <div class="m-share_story__inner bg-image invert-bg">
                                             <div class="l-container">
                                                 <div class="l-grid l-grid--center">
                                                     <h2 class="m-share_story__title l-grid__item f-h3">
-                                                        Humanly offers a trusted space for people living with cancer to
-                                                        be themselves.
+                                                        Tellit offers a trusted space for abused children people to
+                                                        share their experience and get help.
                                                     </h2>
                                                 </div>
                                                 <div class="m-share_story__cta">
@@ -115,8 +86,8 @@
                                     </article>
 
                                     <a href="#" target="_blank" data-behavior="AnalyticsClickTracking"
-                                        data-analyticsclicktracking-label="about - immunomedics link">Humanly Our Story
-                                        is supported by Immunomedics ↗</a>
+                                        data-analyticsclicktracking-label="about - immunomedics link">Tellit Our Story
+                                        is supported by Facebook ↗</a>
                                 </div>
                             </section>
 

@@ -265,17 +265,17 @@
     <div class="g-mobile_nav__aux">
         <ul class="g-mobile_nav__aux__inner">
             <li class="f-p">
-                <a href="https://www.facebook.com/livehumanly.behumanly">
+                <a href="https://www.facebook.com/behumanly">
                     Facebook
                 </a>
             </li>
             <li class="f-p">
-                <a href="https://twitter.com/live__humanly">
+                <a href="https://twitter.com/">
                     Twitter
                 </a>
             </li>
             <li class="f-p">
-                <a href="https://www.instagram.com/live.humanly">
+                <a href="https://www.instagram.com/">
                     Instagram
                 </a>
             </li>
@@ -306,7 +306,7 @@
                 <div class="m-modal__main">
 
                     <ul class="m-vert_list" data-behavior="SocialSharingButtons"
-                        data-SocialSharingButtons-baseurl="https://ourstory.livehumanly.com/">
+                        data-SocialSharingButtons-baseurl="https://ourstory.com/">
                         <li class="m-vert_list__item">
                             <a href="#" class="a-choice btn" data-SocialSharingButtons-btn="facebook">
                                 <div class="a-choice__inner">
@@ -343,7 +343,7 @@
                             </a>
                         </li>
                         <li class="m-vert_list__item">
-                            <a href="mailto:?body=:sharetitle%20:shareurl&subject=Shared%20link%20from%20Humanly"
+                            <a href="mailto:?body=:sharetitle%20:shareurl&subject=Shared%20link%20from%20TellIt"
                                 class="a-choice btn" data-SocialSharingButtons-btn="email">
                                 <div class="a-choice__inner">
                                     <span class="a-choice__icon">
@@ -430,6 +430,19 @@
                                     </div>
                                 </label>
                             </li>
+                            <li class="m-vert_list__item">
+                                <label class="a-choice">
+                                    <input type="radio" class="a-choice__input" name="response_choice" value="thanks"
+                                        data-AjaxForm-radiosubmit data-RespondFlow-choice="&amp;#128155;">
+                                    <div class="a-choice__inner">
+                               
+                                        <!--<span class="a-choice__icon"><img src="https://ourstory.livehumanly.com/common/images/heart.png"></span>-->
+                                        <a class="f-p untuck" href="#modal-custom-messsage" uk-toggle>Send a custom message</a>
+                                        <!-- This is the modal -->
+                                        
+                                    </div>
+                                </label>
+                            </li>
                         </ul>
 
                     </form>
@@ -437,7 +450,7 @@
                 </div>
 
                 <div class="m-modal--response__thanks" data-RespondFlow-thanks>
-                    <p class="f-p">Thank you for contributing to  the Humanly community, sign up  to stay
+                    <p class="f-p">Thank you for contributing to  the TellIt community, sign up  to stay
                         updated</p>
                     <a href="/Joinus" class="a-btn a-btn--type=secondary">
                         <span class="f-label_caps a-btn__label">Join the Community</span>
@@ -510,7 +523,7 @@
                             </a>
                         </li>
                         <li class="m-vert_list__item">
-                            <a href="mailto:?body=:sharetitle%20:shareurl&subject=Shared%20link%20from%20Humanly"
+                            <a href="mailto:?body=:sharetitle%20:shareurl&subject=Shared%20link%20from%20TellIt"
                                 class="a-choice btn" data-SocialSharingButtons-btn="email">
                                 <div class="a-choice__inner">
                                     <span class="a-choice__icon">

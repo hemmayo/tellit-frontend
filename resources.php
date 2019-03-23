@@ -43,7 +43,7 @@
                                                 data-behavior="PjaxLink AnalyticsClickTracking"
                                                 data-pjaxlink-type="resources_filter"
                                                 data-analyticsclicktracking-label="resources - filter - good reads">
-                                                <div class="a-btn__label f-p untuck">Good reads</div>
+                                                <div class="a-btn__label f-p untuck">Sexual Abuse</div>
                                             </a>
                                         </li>
                                         <li class="m-horz_list__item">
@@ -51,7 +51,16 @@
                                                 class="a-btn a-btn--type=secondary"
                                                 data-behavior="PjaxLink AnalyticsClickTracking"
                                                 data-pjaxlink-type="resources_filter" data-analyticsclicktracking-label="resources - filter - everyday ideas">
-                                                <div class="a-btn__label f-p untuck">Everyday ideas
+                                                <div class="a-btn__label f-p untuck">Neglect
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="m-horz_list__item">
+                                            <a href="https://ourstory.livehumanly.com/resources?category=18"
+                                                class="a-btn a-btn--type=secondary"
+                                                data-behavior="PjaxLink AnalyticsClickTracking"
+                                                data-pjaxlink-type="resources_filter" data-analyticsclicktracking-label="resources - filter - everyday ideas">
+                                                <div class="a-btn__label f-p untuck">Physical Abuse
                                                 </div>
                                             </a>
                                         </li>

@@ -7,8 +7,87 @@
 
 <body>
     <div id="a17">
+        <div class="g-home_cover is-visible" data-behavior="HomeCover">
+            <div class="g-home_cover__shadow" data-homecover-shadow="" style="opacity: 1;"></div>
+            <div class="g-home_cover__inner">
+                <section class="o-start bg-sand">
+                    <h1 class="h1 f-h1 o-start__logo">
+                        Tellit
+                    </h1>
+                    <div class="o-start__bg" data-behavior="FloatingImages" data-floatingimages-media="large+">
+                        <picture>
+                            <source
+                                srcset="https://images.unsplash.com/photo-1552479601-bb9db4659483?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+                                media="(min-width: 450px)">
+
+                            <img src="https://images.unsplash.com/photo-1552479601-bb9db4659483?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+                                alt="Share your story" class="" data-floatingimages-img="" style="">
+                        </picture>
+                        <picture>
+                            <source
+                                srcset="https://ourstoryadmin.livehumanly.com/sites/default/files/frontend/kelly_home.jpg"
+                                media="(min-width: 450px)">
+
+                            <img src="https://ourstoryadmin.livehumanly.com/sites/default/files/frontend/kelly_home.jpg"
+                                alt="Share your story" class="is-visible is-right" data-floatingimages-img=""
+                                style="transform: translateY(-12.6%);">
+                        </picture>
+                     
+                    </div>
+                    <div class="o-start__body">
+                        <!-- <p class="f-p_serif">Our Story captures experiences of living with cancer, this is a place to listen, connect and share stories from the smallest moments to transformative shifts.</p> -->
+                        <p class="f-p_serif">Tellit connects victims of child abuse with NGOs associated with the case.
+                        </p>
+                        <button class="a-btn a-btn--type=primary a-btn--with_icon"
+                            data-behavior="PlayToggleBtn Tooltip AnalyticsClickTracking" data-homecover-action=""
+                            data-playtogglebtn-intro="true" data-tooltip-mouseover="true"
+                            data-tooltip-title="Listen to the introduction"
+                            data-analyticsclicktracking-label="homepage audio"
+                            data-analyticsclicktracking-firstclick="true">
+
+                            <svg class="icon--play-mini a-btn__icon" role="img" title="Play"
+                                aria-labelledby="icon--play-mini-1">
+                                <use xlink:href="#icon--play-mini"></use>
+                                <title id="icon--play-mini-1">
+                                    Play
+                                </title>
+                            </svg>
+
+
+                            <svg class="icon--pause-mini a-btn__icon" role="img" title="Pause"
+                                aria-labelledby="icon--pause-mini-1">
+                                <use xlink:href="#icon--pause-mini"></use>
+                                <title id="icon--pause-mini-1">
+                                    Pause
+                                </title>
+                            </svg>
+
+                            <div class="a-btn__label f-label_caps">
+                               Get started
+                            </div>
+                            <div class="tooltip">
+                                <div class="tooltip-arrow"></div>
+                                <div class="tooltip-inner f-label">Listen to the introduction</div>
+                            </div>
+                        </button>
+                    </div>
+                    <button class="o-start__arrow btn" data-behavior="AnalyticsClickTracking"
+                        data-analyticsclicktracking-label="feed entry" data-homecover-scrollbtn="">
+
+                        <svg class="icon--down-arrow" role="img" title="Scroll down"
+                            aria-labelledby="icon--down-arrow-1">
+                            <use xlink:href="#icon--down-arrow"></use>
+                            <title id="icon--down-arrow-1">
+                                Scroll down
+                            </title>
+                        </svg>
+
+                    </button>
+                </section>
+            </div>
+        </div>
         <div class="g-under_home_cover">
-           
+
             <?php require 'includes/nav.php'; ?>
 
             <div data-pjax-wrapper="pjax">
@@ -131,7 +210,7 @@
                                                     </title>
                                                 </svg>
 
-                                                <div class="a-btn__label f-label_caps">Play All</div>
+                                                <div class="a-btn__label f-label_caps">View All</div>
                                             </button>
                                         </div>
                                         <div class="m-horz_list__item">

@@ -139,9 +139,13 @@
                                             <span class="desc"></span> </div>
                                         <div class="m-form__item m-form__item--text l-grid__item m-form__item--large">
                                             <label class="a-field">
-                                                <input type="text" name="contactMethod" value=""
-                                                    class="a-field__input" rows="10" data-behavior="PopulatedInput"
-                                                    required="">
+                                            <select name="contactMethod" class="a-field__input"
+                                                    data-behavior="PopulatedInput">
+                                                    <option value=""></option>
+                                                    <option>Email</option>
+                                                    <option>Phone</option>
+                                                    <option>Visit me</option>
+                                                </select>
                                                 <div class="a-field__placeholder">
                                                     How can we reach you?
                                                 </div>
