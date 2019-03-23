@@ -26,161 +26,84 @@ notifyError = (res) => {
     $.notify(response, errorLevel);
 }
 
-/** Validate password reset token */
+/**
+ * Create report controller
+ */
+$('#create-report-form').submit(function (e) {
+    e.preventDefault();
+    var data = $('#create-report-form').serialize();
+    $.ajax({
+            type: "POST",
+            url: "controller.php?create_report",
+            data: data,
+            dataType: "json",
+            beforeSend() {
+                $('#create-report-form #button').text("Please wait...")
+            }
+        })
+        .done((res) => {
+            $.notify('Your report has been sent!', 'success');
+            setTimeout(
+                () => window.location.href = './', 1500
+            )
+        })
+        .fail((res) => {
+            notifyError(res)
+        })
+        .always(() => {
+            $('#create-report-form #button').text("Create report")
+        });
+});
 
-validateResetToken = () => {
-    var url = new URL(window.location.href);
-    var token = url.searchParams.get("token");
-    var data = {
-        token
+function objectifyForm(formArray) {//serialize data function
+
+    var returnArray = {};
+    for (var i = 0; i < formArray.length; i++){
+      returnArray[formArray[i]['name']] = formArray[i]['value'];
     }
+    return returnArray;
+  }
 
-    $.ajax({
-            type: "POST",
-            url: "controller.php?validate_reset_token",
-            data: data,
-            dataType: "json"
-        })
-        .done((res) => {
-            console.log('Valid token!')
-        })
-        .fail((res) => {
-            $.notify('Invalid or expired token!', 'error');
-            setTimeout(
-                () => window.location.href = './forgot-password.php', 1500
-            )
-        });
-}
-
-logout = () => {
-    fetch('controller.php?logout')
-        .then(response => {
-            document.cookie = 'token=; Max-Age=-99999999;';
-            window.location.href = './login.php'
-        })
-}
 
 /**
- * Login form controller
+ * Save NGO profile controller
  */
-$('#login-form').submit(function (e) {
+$('#ngo-profile-form').submit(function (e) {
     e.preventDefault();
-    var data = $('#login-form').serialize();
+    // var data = $('#ngo-profile-form').serialize();
+    var values = $('input:checkbox:checked.selectedCategories').map(function () {
+        return this.value;
+      }).get();
+    //   data = {
+    //       cacNumber: 
+    //   }
+    sC = document.createElement('input')
+    sC.value = values
+    sC.setAttribute('name', 'categories')
+    sC.setAttribute('hidden', 'hidden')
+    $('#ngo-profile-form').append(sC)
+    var data = $('#ngo-profile-form').serializeArray();
+    data = objectifyForm(data)
+    console.log(data)
     $.ajax({
             type: "POST",
-            url: "controller.php?login",
-            data: data,
+            url: "controller.php?create_ngo_profile",
+            data: {data},
             dataType: "json",
             beforeSend() {
-                $('#login-form #button').text("Please wait...")
+                $('#ngo-profile-form #button').text("Please wait...")
             }
         })
         .done((res) => {
-            $.notify('Login Successful!', 'success');
+            $.notify('Your profile has been saved!', 'success');
             setTimeout(
-                () => window.location.href = './app/', 1000
+                () => window.location.href = './', 1500
             )
         })
         .fail((res) => {
             notifyError(res)
         })
         .always(() => {
-            $('#login-form #button').text("Sign In")
+            $('#ngo-profile-form #button').text("Complete profile")
         });
-});
-
-
-/**
- * Sign up form controller
- */
-$('#signup-form').submit(function (e) {
-    e.preventDefault();
-    var data = $('#signup-form').serialize();
-    $.ajax({
-            type: "POST",
-            url: "controller.php?signup",
-            data: data,
-            dataType: "json",
-            beforeSend() {
-                $('#signup-form #button').text("Please wait...")
-            }
-        })
-        .done((res) => {
-            $.notify('Account Created', 'success');
-            setTimeout(
-                () => window.location.href = './login.php', 1500
-            )
-        })
-        .fail((res) => {
-            notifyError(res)
-        })
-        .always(() => {
-            $('#signup-form #button').html("Create my account")
-        });
-});
-
-/**
- * Forgot password form controller
- */
-$('#forgot-password-form').submit(function (e) {
-    e.preventDefault();
-    var data = $('#forgot-password-form').serialize();
-    $.ajax({
-            type: "POST",
-            url: "controller.php?send_reset",
-            data: data,
-            dataType: "json",
-            statusCode: {
-                202: () => {
-                    $.notify('Check your email for the password reset link!', 'success')
-                    setTimeout(
-                        () => window.location.href = './login.php', 2000
-                    )
-                }
-            }
-        })
-        .done((res) => {
-            $.notify('Check your email for the password reset link!', 'success')
-            setTimeout(
-                () => window.location.href = './login.php', 2000
-            )
-        })
-        .fail((res) => {
-            notifyError(res)
-        });
-});
-
-/**
- * Password Reset form controller
- */
-$('#password-reset-form').submit(function (e) {
-    e.preventDefault();
-    var data = $('#password-reset-form').serializeArray();
-    var url = new URL(window.location.href);
-    var token = url.searchParams.get("token");
-    data.push({
-        name: 'token',
-        value: token
-    })
-
-    $.ajax({
-            type: "POST",
-            url: "controller.php?password_reset",
-            data: $.param(data),
-            dataType: "json"
-        })
-        .done((res) => {
-            $.notify('Password changed successfully!', 'success');
-            setTimeout(
-                () => window.location.href = './login.php', 1500
-            )
-        })
-        .fail((res) => {
-            notifyError(res)
-        });
-});
-
-$('#mobile-nav-button').click(function (e) { 
-    e.preventDefault();
-    $('#mobile-nav').toggleClass('hidden');
 });

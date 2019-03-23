@@ -226,6 +226,24 @@ function updateUser($id = '', $data = [])
     return sendPUT(API['base_url'] . '/users/' . $id, $data);
 }
 
+function createReport($data = [])
+{
+    $data['access_token'] = ACCESS_TOKEN;
+    return sendPOST(API['base_url'] . '/reports/', $data);
+}
+
+function getAbuseCategories($id = '')
+{
+    $res = sendGET(API['base_url'] . '/abuse-categories/' . $id . '?access_token=' . ACCESS_TOKEN)['body'];
+    return json_decode($res);
+}
+
+
+
+
+
+
+
 function getWalletTransaction($id = '')
 {
     $res = sendGET(API['base_url'] . '/wallet_transactions/' . $id . '?access_token=' . ACCESS_TOKEN)['body'];
@@ -309,9 +327,9 @@ function updateBalance($amount = 0, $action = 'debit')
     return sendPUT(API['base_url'] . '/users/' . $user->id . '/balance', $user);
 }
 
-function fetchCardCategories($category = null, $search = null)
+function fetchAbuseCategories($category = null, $search = null)
 {
-    return sendGET(API['base_url'] . '/card_categories/' . $category . '?q='. $search);
+    return sendGET(API['base_url'] . '/abuse_categories/' . $category . '?q='. $search);
 }
 
 function fetchCardCategoriesView($category = null, $search = null)
@@ -530,8 +548,8 @@ if (isset($_GET)) {
             $data = updateUser($user->id, $_POST);
             respond($data['body'], $data['status_code']);
             break;
-        case 'save_wallet_transaction':
-            $data = saveWalletTransaction($_POST);
+        case 'create_report':
+            $data = createReport($_POST);
             respond($data['body'], $data['status_code']);
             break;
         case 'validate_wallet_transaction':
@@ -539,10 +557,10 @@ if (isset($_GET)) {
             $data = validateWalletTransaction($ref);
             respond($data['body'], $data['status_code']);
             break;
-        case 'card_categories':
+        case 'abuse_categories':
             $category = !empty($_GET['category']) ? $_GET['category'] : null;
             $search = !empty($_GET['search']) ? $_GET['search'] : null;
-            $data = fetchCardCategories($category, $search);
+            $data = fetchAbuseCategories($category, $search);
             respond($data['body'], $data['status_code']);
             break;
         case 'card_categories_view':
