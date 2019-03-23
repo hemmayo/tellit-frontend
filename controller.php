@@ -238,6 +238,12 @@ function getAbuseCategories($id = '')
     return json_decode($res);
 }
 
+function getReports($id = '')
+{
+    $res = sendGET(API['base_url'] . '/reports/' . $id . '?access_token=' . ACCESS_TOKEN)['body'];
+    return json_decode($res);
+}
+
 
 
 
